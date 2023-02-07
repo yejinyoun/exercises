@@ -15,10 +15,17 @@ let firstName = name.substring(0, name.indexOf(" "));
 
 console.log(firstName);
 
-let middleName = name.split(" ")[1];
+/* let middleName = name.split(" ")[1]; */
+
+let middleName = name.substring(name.indexOf(" ") + 1, name.indexOf(" ", name.indexOf(" ") + 1));
 
 console.log(middleName);
-
+/* 
 let lastName = name.split(" ")[2];
+
+console.log(lastName);
+ */
+
+let lastName = name.substring(name.indexOf(" ", name.indexOf(" ") + 1) + 1);
 
 console.log(lastName);
