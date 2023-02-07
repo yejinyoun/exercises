@@ -11,6 +11,14 @@ Console.log the three variables at the very end of your code. */
 
 const name = "Peter Heronimous Lind";
 
-let firstName;
-let middleName;
-let lastName;
+let firstName = name.substring(0, name.indexOf(" "));
+
+console.log(firstName);
+
+let middleName = name.split(" ")[1];
+
+console.log(middleName);
+
+let lastName = name.split(" ")[2];
+
+console.log(lastName);
