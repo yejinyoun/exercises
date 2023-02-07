@@ -8,7 +8,7 @@ Hint: use substring, toUpperCase, toLowerCase and simple string concatenation
 
  */
 
-let name = "PETER";
+let name = "pEtEr";
 
 let newname =
   name.substring(0, 2).toLowerCase() +
