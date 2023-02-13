@@ -24,3 +24,19 @@ function sayHello(firstName, lastName) {
 } */
 
 /* sayHello("jin"); */
+
+// exercise 2a
+
+/* function presentPet(firstName, animalType, animalName) {
+  console.log(`My name is ${firstName}, I have a ${animalType} called ${animalName}`);
+} */
+
+/* presentPet("jini", "dog", "ttori"); */
+
+// exercise 2b
+
+/* const firstName = "jini";
+const animalType = "dog";
+const animalName = "ttori";
+
+presentPet(firstName, animalType, animalName); */
