@@ -79,3 +79,9 @@ function capitalize(str) {
     };
   }
 }
+
+//problem : when middleName or lastName is undefined, it capitalize function doesn't work
+// bc it use string method "substring", so I had to put if else statement to separate
+// 1. when it has all first,middle,last name 2. only first,last name, 3. only first name
+// at the end return the object and not existing property value to undefined
+// there is maybe a simpler way?
