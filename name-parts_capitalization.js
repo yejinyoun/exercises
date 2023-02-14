@@ -4,7 +4,7 @@
 // capitalize each
 // return an object
 
-const fullName = "Harry";
+const fullName = "harry";
 
 console.log(getNameParts(fullName));
 
@@ -18,46 +18,64 @@ function getNameParts(fullname) {
       .join(" "); //convert into string, using " " in between elements
     let lastName = fullname.split(" ")[fullname.split(" ").length - 1];
 
-    return {
+    return capitalize({
       firstName: firstName,
       middleName: middleName,
       lastName: lastName,
-    };
+    });
   }
   // case 2. firstname + lastname (no middle name)
   else if (fullname.split(" ").length == 2) {
     let firstName = fullname.split(" ")[0];
     let lastName = fullname.split(" ")[1];
-    let middleName = undefined;
 
-    return {
+    return capitalize({
       firstName: firstName,
       lastName: lastName,
-      middleName: undefined,
-    };
+    });
   } else {
     let firstName = fullname;
-    return {
+    return capitalize({
       firstName: firstName,
+    });
+  }
+}
+
+function capitalize(str) {
+  // when there are more than 1 middle name, 2nd or more middle name doesn't capitalize tho
+
+  //
+  if (str.middleName !== undefined) {
+    let capFirstName =
+      str.firstName.substring(0, 1).toUpperCase() + str.firstName.substring(1).toLowerCase();
+    let capMiddleName =
+      str.middleName.substring(0, 1).toUpperCase() + str.middleName.substring(1).toLowerCase();
+    let capLastName =
+      str.lastName.substring(0, 1).toUpperCase() + str.lastName.substring(1).toLowerCase();
+
+    return {
+      firstName: capFirstName,
+      middleName: capMiddleName,
+      lastName: capLastName,
+    };
+  } else if (str.lastName !== undefined) {
+    let capFirstName =
+      str.firstName.substring(0, 1).toUpperCase() + str.firstName.substring(1).toLowerCase();
+    let capLastName =
+      str.lastName.substring(0, 1).toUpperCase() + str.lastName.substring(1).toLowerCase();
+
+    return {
+      firstName: capFirstName,
+      middleName: undefined,
+      lastName: capLastName,
+    };
+  } else {
+    let capFirstName =
+      str.firstName.substring(0, 1).toUpperCase() + str.firstName.substring(1).toLowerCase();
+    return {
+      firstName: capFirstName,
       middleName: undefined,
       lastName: undefined,
     };
   }
-}
-
-console.log(capitalize({ firstName: "ttori", middleName: "vErY cUte", lastName: "cUtE" }));
-
-function capitalize(str) {
-  let capFirstName =
-    str.firstName.substring(0, 1).toUpperCase() + str.firstName.substring(1).toLowerCase();
-  let capMiddleName =
-    str.middleName.substring(0, 1).toUpperCase() + str.middleName.substring(1).toLowerCase();
-  let capLastName =
-    str.lastName.substring(0, 1).toUpperCase() + str.lastName.substring(1).toLowerCase();
-
-  return {
-    firstName: capFirstName,
-    middleName: capMiddleName,
-    lastName: capLastName,
-  };
 }
