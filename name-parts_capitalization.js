@@ -93,51 +93,61 @@ function capitalize(str) {
 //part 2
 // capitalize first and separate
 
-/* function getNameParts(fullname) {
-  // case 1. firstname + middlename + lastname
-  if (fullname.split(" ").length >= 3) {
-    let firstName = fullname.split(" ")[0];
-    let middleName = fullname
-      .split(" ")
-      .slice(1, fullname.split(" ").length - 1) //returns new array (startpoint,endpoint)
-      .join(" "); //convert into string, using " " in between elements
-    let lastName = fullname.split(" ")[fullname.split(" ").length - 1];
+const fullname = "albus weirdo hairy dumbledorE";
 
-    return capitalize({
-      firstName: firstName,
-      middleName: middleName,
-      lastName: lastName,
-    });
+const capitalizedAndSeparatedName = capitalizeAndSeparate(fullname);
+
+console.log(capitalizedAndSeparatedName);
+
+function capitalizeAndSeparate(fullname) {
+  const result = capitalize(fullname);
+  const finalResult = getNameParts(result);
+
+  function capitalize(str) {
+    let newStr = str.substring(0, 1).toUpperCase();
+
+    for (let i = 1; i < str.length; i++) {
+      if (str[i - 1] == " ") {
+        newStr += str.substring(i, i + 1).toUpperCase();
+      } else {
+        newStr += str.substring(i, i + 1).toLowerCase();
+      }
+    }
+    return newStr;
   }
-  // case 2. firstname + lastname (no middle name)
-  else if (fullname.split(" ").length == 2) {
-    let firstName = fullname.split(" ")[0];
-    let lastName = fullname.split(" ")[1];
 
-    return capitalize({
-      firstName: firstName,
-      lastName: lastName,
-    });
-  } else {
-    let firstName = fullname;
-    return capitalize({
-      firstName: firstName,
-    });
-  }
-} */
+  function getNameParts(fullname) {
+    // case 1. firstname + middlename + lastname
+    if (fullname.split(" ").length >= 3) {
+      let firstName = fullname.split(" ")[0];
+      let middleName = fullname
+        .split(" ")
+        .slice(1, fullname.split(" ").length - 1) //returns new array (startpoint,endpoint)
+        .join(" "); //convert into string, using " " in between elements
+      let lastName = fullname.split(" ")[fullname.split(" ").length - 1];
 
-function capitalize(str) {
-  let newStr = str.substring(0, 1).toUpperCase();
+      return {
+        firstName: firstName,
+        middleName: middleName,
+        lastName: lastName,
+      };
+    }
+    // case 2. firstname + lastname (no middle name)
+    else if (fullname.split(" ").length == 2) {
+      let firstName = fullname.split(" ")[0];
+      let lastName = fullname.split(" ")[1];
 
-  for (let i = 1; i < str.length; i++) {
-    if (str[i - 1] == " ") {
-      newStr += str.substring(i, i + 1).toUpperCase();
+      return {
+        firstName: firstName,
+        lastName: lastName,
+      };
     } else {
-      newStr += str.substring(i, i + 1).toLowerCase();
+      let firstName = fullname;
+      return {
+        firstName: firstName,
+      };
     }
   }
 
-  return newStr;
+  return finalResult;
 }
-
-console.log(capitalize("tToRi dUmbLeDore bOo"));
