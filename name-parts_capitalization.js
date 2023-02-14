@@ -4,9 +4,9 @@
 // capitalize each
 // return an object
 
-const fullName = "Harry James Potter";
+const fullName = "Harry Potter";
 
-getNameParts(fullName);
+console.log(getNameParts(fullName));
 
 function getNameParts(fullname) {
   // case 1. firstname + middlename + lastname
@@ -17,11 +17,25 @@ function getNameParts(fullname) {
       .slice(1, fullname.split(" ").length - 1) //returns new array (startpoint,endpoint)
       .join(" "); //convert into string, using " " in between elements
     let lastName = fullname.split(" ")[fullname.split(" ").length - 1];
-    console.log(lastName);
-    console.log(`_${middleName}_`);
-    console.log(typeof middleName);
+
+    return {
+      firstName: firstName,
+      middleName: middleName,
+      lastName: lastName,
+    };
   }
-  // else
+  // case 2. firstname + lastname (no middle name)
+  else if (fullname.split(" ").length == 2) {
+    let firstName = fullname.split(" ")[0];
+    let lastName = fullname.split(" ")[1];
+    let middleName = undefined;
+
+    return {
+      firstName: firstName,
+      lastName: lastName,
+      middleName: undefined,
+    };
+  }
 }
 
 function capitalize() {}
