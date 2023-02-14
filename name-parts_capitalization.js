@@ -4,7 +4,7 @@
 // capitalize each
 // return an object
 
-const fullName = "harry";
+/* const fullName = "harry";
 
 console.log(getNameParts(fullName));
 
@@ -78,7 +78,7 @@ function capitalize(str) {
       lastName: undefined,
     };
   }
-}
+} */
 
 //problem : when middleName or lastName is undefined, it capitalize function doesn't work
 // bc it use string method "substring", so I had to put if else statement to separate
@@ -89,3 +89,55 @@ function capitalize(str) {
 // also set return value of getNameParts as
 // capitalize function w parameter of object {firstName : , lastName :, }
 // is this even ok?
+
+//part 2
+// capitalize first and separate
+
+/* function getNameParts(fullname) {
+  // case 1. firstname + middlename + lastname
+  if (fullname.split(" ").length >= 3) {
+    let firstName = fullname.split(" ")[0];
+    let middleName = fullname
+      .split(" ")
+      .slice(1, fullname.split(" ").length - 1) //returns new array (startpoint,endpoint)
+      .join(" "); //convert into string, using " " in between elements
+    let lastName = fullname.split(" ")[fullname.split(" ").length - 1];
+
+    return capitalize({
+      firstName: firstName,
+      middleName: middleName,
+      lastName: lastName,
+    });
+  }
+  // case 2. firstname + lastname (no middle name)
+  else if (fullname.split(" ").length == 2) {
+    let firstName = fullname.split(" ")[0];
+    let lastName = fullname.split(" ")[1];
+
+    return capitalize({
+      firstName: firstName,
+      lastName: lastName,
+    });
+  } else {
+    let firstName = fullname;
+    return capitalize({
+      firstName: firstName,
+    });
+  }
+} */
+
+function capitalize(str) {
+  let newStr = str.substring(0, 1).toUpperCase();
+
+  for (let i = 1; i < str.length; i++) {
+    if (str[i - 1] == " ") {
+      newStr += str.substring(i, i + 1).toUpperCase();
+    } else {
+      newStr += str.substring(i, i + 1).toLowerCase();
+    }
+  }
+
+  return newStr;
+}
+
+console.log(capitalize("tToRi dUmbLeDore bOo"));
