@@ -96,17 +96,19 @@ function capitalize(str) {
 const fullname = "albus weirdo hairy dumbledorE";
 
 const capitalizedAndSeparatedName = capitalizeAndSeparate(fullname);
-
 console.log(capitalizedAndSeparatedName);
+//returns capitalized firstName, middleName, lastName in object
 
 function capitalizeAndSeparate(fullname) {
-  const result = capitalize(fullname);
-  const finalResult = getNameParts(result);
+  const capitalizedName = capitalize(fullname);
+  const finalResult = getNameParts(capitalizedName);
 
   function capitalize(str) {
     let newStr = str.substring(0, 1).toUpperCase();
+    //first letter capitalize bc when forLoop start, if i=0, index[-1] doesn't work
 
     for (let i = 1; i < str.length; i++) {
+      // add one letter by one
       if (str[i - 1] == " ") {
         newStr += str.substring(i, i + 1).toUpperCase();
       } else {
