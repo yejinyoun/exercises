@@ -85,3 +85,7 @@ function capitalize(str) {
 // 1. when it has all first,middle,last name 2. only first,last name, 3. only first name
 // at the end return the object and not existing property value to undefined
 // there is maybe a simpler way?
+
+// also set return value of getNameParts as
+// capitalize function w parameter of object {firstName : , lastName :, }
+// is this even ok?
