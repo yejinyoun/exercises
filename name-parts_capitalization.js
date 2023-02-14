@@ -4,7 +4,7 @@
 // capitalize each
 // return an object
 
-const fullName = "Harry Potter";
+const fullName = "Harry";
 
 console.log(getNameParts(fullName));
 
@@ -34,6 +34,13 @@ function getNameParts(fullname) {
       firstName: firstName,
       lastName: lastName,
       middleName: undefined,
+    };
+  } else {
+    let firstName = fullname;
+    return {
+      firstName: firstName,
+      middleName: undefined,
+      lastName: undefined,
     };
   }
 }
