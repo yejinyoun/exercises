@@ -45,6 +45,19 @@ function getNameParts(fullname) {
   }
 }
 
-function capitalize() {}
+console.log(capitalize({ firstName: "ttori", middleName: "vErY cUte", lastName: "cUtE" }));
 
-function fullnameToArray() {}
+function capitalize(str) {
+  let capFirstName =
+    str.firstName.substring(0, 1).toUpperCase() + str.firstName.substring(1).toLowerCase();
+  let capMiddleName =
+    str.middleName.substring(0, 1).toUpperCase() + str.middleName.substring(1).toLowerCase();
+  let capLastName =
+    str.lastName.substring(0, 1).toUpperCase() + str.lastName.substring(1).toLowerCase();
+
+  return {
+    firstName: capFirstName,
+    middleName: capMiddleName,
+    lastName: capLastName,
+  };
+}
