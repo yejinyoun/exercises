@@ -76,7 +76,7 @@ function rgbToHEX(r, g, b) {
 // instead of let hex = value inside the function,
 // defined hex outside and the value is function return
 
-let rgb = {
+/* let rgb = {
   r: 9,
   g: 0,
   b: 37,
@@ -104,4 +104,26 @@ function rgbToHEX(input) {
   }
 
   return "#" + red + green + blue;
+} */
+
+// hextToRBG(hex) w return
+// instead of only defining separate variable let= r,g,b
+// return object {r:r,} each property has value of variable r,g,b
+// rgb variable gets the value of function hexToRGB(hex) return value
+
+let hex = "#ff6347";
+
+let rgb = hexToRGB(hex);
+
+console.log(rgb);
+console.log(typeof rgb);
+
+function hexToRGB(input) {
+  let hexNum = input.substring(1); // to remove # on the front
+
+  let r = parseInt(hexNum.substring(0, 2), 16); //convert first 2digit into 16 radix number
+  let g = parseInt(hexNum.substring(2, 4), 16); //convert 3-4digit into 16 radix number
+  let b = parseInt(hexNum.substring(4, 6), 16); //convert last 2digit into 16 radix number
+
+  return { r: r, g: g, b: b };
 }
