@@ -41,3 +41,47 @@ function hexToRGB(hexColor) {
   console.log(`_${g}_`);
   console.log(`_${b}_`);
 }
+
+// rgbToHEX
+/*
+Test the function with the same colors as before:
+
+r	g	b	hex
+186	218	85	#bada55
+250	202	222	#facade
+192	255	238	#c0ffee
+240	11	66	#f00b42
+192	222	37	#c0de25
+ 
+
+and also add these to test for correct handling of two digits
+
+r	g	b	hex
+12	2	17	#0c0211
+1	2	3	#010203
+9	0	37	#090025
+ */
+
+rgbToHEX(9, 0, 37);
+
+function rgbToHEX(r, g, b) {
+  let red = r.toString(16);
+  if (red.length < 2) {
+    red = "0" + red;
+  }
+
+  let green = g.toString(16);
+  if (green.length < 2) {
+    green = "0" + green;
+  }
+
+  let blue = b.toString(16);
+  if (blue.length < 2) {
+    blue = "0" + blue;
+  }
+
+  let hex = "#" + red + green + blue;
+
+  console.log(hex);
+  console.log(typeof hex);
+}
