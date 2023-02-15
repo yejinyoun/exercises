@@ -24,3 +24,20 @@ function cssToRGB(cssColor) {
   console.log(`_${b}_`);
   console.log(typeof b);
 }
+
+//hexToRGB
+//#ff6347 - digit 1-2 = red, 3-4 = green, 5-6 = blue
+
+hexToRGB("#ff6347");
+
+function hexToRGB(hexColor) {
+  let hex = hexColor.substring(1); // to remove # on the front
+
+  let r = parseInt(hex.substring(0, 2), 16); //convert first 2digit into 16 radix number
+  let g = parseInt(hex.substring(2, 4), 16); //convert 3-4digit into 16 radix number
+  let b = parseInt(hex.substring(4, 6), 16); //convert last 2digit into 16 radix number
+
+  console.log(`_${r}_`);
+  console.log(`_${g}_`);
+  console.log(`_${b}_`);
+}
