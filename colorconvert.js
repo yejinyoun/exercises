@@ -43,24 +43,11 @@ function hexToRGB(hexColor) {
 }
 
 // rgbToHEX
-/*
-Test the function with the same colors as before:
-
-r	g	b	hex
-186	218	85	#bada55
-250	202	222	#facade
-192	255	238	#c0ffee
-240	11	66	#f00b42
-192	222	37	#c0de25
- 
-
-and also add these to test for correct handling of two digits
-
-r	g	b	hex
-12	2	17	#0c0211
-1	2	3	#010203
-9	0	37	#090025
- */
+// take each r,g,b value(number) as parameter
+// hex code is in a string "#xxxxxx"
+// convert each number (r,g,b) to 16 radix number(in a string)
+// if the converted value is less than 2digit, - (1digit) so add 0 in front
+// add all together and put # on the front
 
 rgbToHEX(9, 0, 37);
 
