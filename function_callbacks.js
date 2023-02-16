@@ -40,7 +40,8 @@ function fire(person) {
 }
 
 // create hireOrFire function, where it takes function(hire/fire) as a parameter, and a person parameter
-//always function NewFunction(function,parameter) <- this order
+//*** parameter order doesn't matter
+// - it can be function newFunction(function,parameter) or newFunction(parameter,function) */
 function hireOrFire(action, person) {
   action(person);
 }
