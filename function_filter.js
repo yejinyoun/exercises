@@ -30,14 +30,26 @@ function isCat(animal) {
     return false;
   }
 }
+
+function isDog(animal) {
+  if (animal.type === "dog") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 //.filter is array method!
 //- passes item one by one and create new array w items that fits the condition
 // returns a new array, combination of parameters that passes the criteria
 let allAnimals = animals.filter(all);
 let noAnimals = animals.filter(none);
-let cat = animals.filter(isCat);
+let cats = animals.filter(isCat);
+let dogs = animals.filter(isDog);
+
 // if a parameter (compare each object in animals array) matches the criteria
 
 console.log("All :", allAnimals);
 console.log("None :", noAnimals);
-console.log("Cat :", cat);
+console.log("Cat :", cats);
+console.log("Dogs :", dogs);
