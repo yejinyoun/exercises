@@ -6,9 +6,12 @@ function sayHello(person) {
   console.log(`Hello ${person}`);
 }
 
+//forEach is array method, taking each item as a parameter,
+// and callback function as function parameter
 people.forEach(sayHello);
 
-//same as
+//same as above
+// take each item(person) and use it as a parameter and function parameter (arrow function)
 people.forEach((person) => console.log(`Hello ${person}`));
 
 //testParam
@@ -17,4 +20,4 @@ function testParams(a, b, c, d) {
 }
 
 people.forEach(testParams);
-// forEach takes 3 parameters - each item (value), index of each item, entire array
+// forEach(function) takes 3 parameters - each item (value), index of each item, entire array
