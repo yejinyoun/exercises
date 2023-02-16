@@ -6,7 +6,11 @@
   return `Hello ${firstName}`;
 }
 
-const sayHi = greeting;
+const sayHi = greeting; 
+
+// same as object - let a = {name:"mimi", age:"10"}, const b = a
+// both function name(variable:type function) point at the same function
+// function name stores reference of the function
 
 console.log(sayHi);
 console.log(sayHi("mimi")); */
