@@ -51,3 +51,17 @@ hireOrFire(fire, person3);
 
 console.log(person4);
 console.log(person3);
+
+// function loadJSON (url, callback)
+
+function loadJSON(url, callback) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((myData) => callback(myData));
+}
+
+function consoleData(data) {
+  console.log(data);
+}
+
+loadJSON("animals.json", consoleData);
