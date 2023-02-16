@@ -40,6 +40,7 @@ function fire(person) {
 }
 
 // create hireOrFire function, where it takes function(hire/fire) as a parameter, and a person parameter
+//always function NewFunction(function,parameter) <- this order
 function hireOrFire(action, person) {
   action(person);
 }
